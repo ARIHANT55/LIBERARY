@@ -1,0 +1,89 @@
+<html><head><title>Astropia</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+{
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a {
+  border: 1px solid #ddd;
+  margin-top: -1px;
+  background-color: #f6f6f6;
+  padding: 12px;
+  font-size: 18px;
+  color: black;
+  display: block;
+  text-decoration: none;
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+</style>
+</head>
+<body bgcolor="#CCFFFA">
+
+<p style="font-family: monotype corsiva; font-size:30px"> This website will help you understand all the phenomena and entities present in our universe
+especially the famous ones. You can search for any of the topics.
+</p>
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for topics.." title="Type in a name">
+
+<ul id="myUL">
+  <li><a href="computer.html">Star Cycle</a></li>
+  <li><a href="https://en.m.wikipedia.org/wiki/Stellar_classification">Types Of Stars</a></li>
+
+  <li><a href="https://en.m.wikipedia.org/wiki/Galaxy">Galaxy</a></li>
+  <li><a href="https://en.m.wikipedia.org/wiki/Milky_Way">Milky Way</a></li>
+
+  <li><a href="https://en.m.wikipedia.org/wiki/Black_hole#:~:text=A%20black%20hole%20is%a,to%20form%20a%20black%20hole.">Blackhole</a></li>
+  <li><a href="#>Constellations</a></li>
+  <li><a href="#">Night Sky</a></li>
+</ul>
+
+<script>
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
